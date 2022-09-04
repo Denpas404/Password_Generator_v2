@@ -1,0 +1,66 @@
+﻿<Window x:Class="Password_Generator_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Password_Generator_v2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF262F37">
+
+        <TextBox Text="TextBox with CornerRadius.. " Margin="100,95,377,280" Height="Auto" Width="Auto">
+            <TextBox.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="TextAlignment" Value="Center"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button x:Name="button" Content="Copy password" Margin="491,95,100,0" VerticalAlignment="Top" Height="59" Click="button_Click">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Padding"  Value="12,0,12,0"/>
+                </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Slider x:Name="passwordLength_slider" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Width="600" Height="39" ValueChanged="passwordLength_slider_ValueChanged" IsSnapToTickEnabled="True"/>
+
+        <Label x:Name="passwordLength_label" Content="Password length: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+
+
+        <Label x:Name="uppercase_label" Content="Uppercase letters" HorizontalAlignment="Left" Margin="100,299,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <CheckBox x:Name="uppercase_checkBox" Content="(ABCDEFG)" HorizontalAlignment="Left" Margin="271,306,0,0" VerticalAlignment="Top" Foreground="White">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+
+
+        <Label x:Name="lowercase_label" Content="Lowercase letters" HorizontalAlignment="Left" Margin="100,336,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <CheckBox x:Name="lowercase_checkBox" Content="(abcdefg)" HorizontalAlignment="Left" Margin="271,347,0,0" VerticalAlignment="Top" Foreground="White">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        
+
+
+
+
+
+    </Grid>
+</Window>
