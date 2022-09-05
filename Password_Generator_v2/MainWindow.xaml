@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="#FF262F37">
 
-        <TextBox Text="TextBox with CornerRadius.. " Margin="100,95,377,280" Height="Auto" Width="Auto">
+        <TextBox x:Name="password_txtbox" Text="TextBox with CornerRadius.. " Margin="100,95,377,0" Width="Auto" Height="59" VerticalAlignment="Top">
             <TextBox.Resources>
                 <Style TargetType="TextBox">
                     <Setter Property="Background" Value="White"/>
@@ -43,7 +43,7 @@
 
 
         <Label x:Name="uppercase_label" Content="Uppercase letters" HorizontalAlignment="Left" Margin="100,299,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
-        <CheckBox x:Name="uppercase_checkBox" Content="(ABCDEFG)" HorizontalAlignment="Left" Margin="271,306,0,0" VerticalAlignment="Top" Foreground="White">
+        <CheckBox x:Name="uppercase_checkBox" Content="(ABCDEFG)" HorizontalAlignment="Left" Margin="271,306,0,0" VerticalAlignment="Top" Foreground="White" IsChecked="True">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
             </CheckBox.LayoutTransform>
@@ -56,7 +56,19 @@
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
             </CheckBox.LayoutTransform>
         </CheckBox>
-        
+        <Label x:Name="numbers_label" Content="Numbers" HorizontalAlignment="Left" Margin="476,299,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <CheckBox x:Name="numbers_checkBox" Content="(012346)" HorizontalAlignment="Left" Margin="583,306,0,0" VerticalAlignment="Top" Foreground="White">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <Label x:Name="symbols_label" Content="Symbols" HorizontalAlignment="Left" Margin="476,340,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <CheckBox x:Name="symbols_checkBox" Content="(!@#£¤$?)" HorizontalAlignment="Left" Margin="583,347,0,0" VerticalAlignment="Top" Foreground="White">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+
 
 
 

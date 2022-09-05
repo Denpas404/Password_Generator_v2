@@ -20,8 +20,9 @@ namespace Password_Generator_v2
     /// </summary>
     public partial class MainWindow : Window
     {
+        AppLogic _appLogic;
         int passwordLength;
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -29,17 +30,21 @@ namespace Password_Generator_v2
             passwordLength_slider.Maximum = 24;
         }
 
-        
-
+        //Slider 
         private void passwordLength_slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            _appLogic = new AppLogic();
+
             passwordLength_label.Content = "Password length: " + passwordLength_slider.Value.ToString();
             passwordLength = (int)passwordLength_slider.Value;
+
+            password_txtbox.Text = _appLogic.CreateNewPassword((bool)uppercase_checkBox.IsChecked, (bool)lowercase_checkBox.IsChecked, (bool)numbers_checkBox.IsChecked, (bool)symbols_checkBox.IsChecked, passwordLength);
         }
 
+        //Button
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            Clipboard.SetText(password_txtbox.Text.ToString());
         }
     }
 }
