@@ -18,7 +18,13 @@ namespace Password_Generator_v2
         //Returns password 
         public string CreateNewPassword(bool uppercase, bool lowercase, bool numbers, bool symbols, int passwordlength)
         {
-            return ScrablePassword(CombinePassword(uppercase, lowercase, numbers, symbols, passwordlength));
+            if (!uppercase && !lowercase && !numbers && !symbols)
+            {
+                _password = "One checkbox must be checked!";
+                return _password;
+            }
+            else
+                return ScrablePassword(CombinePassword(uppercase, lowercase, numbers, symbols, passwordlength));
         }
 
         //Generates password
@@ -57,10 +63,7 @@ namespace Password_Generator_v2
 
                     if (_password.Length == passwordLgth) break;
                 }
-                if (!upper && !lower && !number && !symbol)
-                {
-                    _password = "One checkbox must be checked!";
-                }                
+                     
             }
             return _password;
         }
